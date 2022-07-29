@@ -1,0 +1,11 @@
+services:
+  mono-dev:
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    command: "xsp4 --root /app/ASP.NET --address 0.0.0.0 --port 9000" #"bash" #"cd ./ASP.NET/ && xsp4 --address 0.0.0.0 --port 9000"
+    tty: true
+    ports:
+      - 9000:9000
+    volumes:
+      - ./projects:/app
